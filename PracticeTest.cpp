@@ -151,7 +151,7 @@ TEST(PracticeTest, secondSmallest)
 	ASSERT_EQ(c, 1);
 
 }
-TEST(PracticeTest, One_number_diff)
+TEST(PracticeTest, first_number_diff)
 {
     Practice testObject;
 	int a = 2;
@@ -165,6 +165,32 @@ TEST(PracticeTest, One_number_diff)
 
 }
 
+TEST(PracticeTest, second_number_diff)
+{
+    Practice testObject;
+	int a = 3;
+	int b = 2;
+	int c = 3;
+
+	testObject.sortDescending(a, b, c);
+	ASSERT_EQ(a, 3);
+	ASSERT_EQ(b, 2);
+	ASSERT_EQ(c, 2);
+
+}
+TEST(PracticeTest, third_number_diff)
+{
+    Practice testObject;
+	int a = 3;
+	int b = 3;
+	int c = 2;
+
+	testObject.sortDescending(a, b, c);
+	ASSERT_EQ(a, 3);
+	ASSERT_EQ(b, 2);
+	ASSERT_EQ(c, 2);
+
+}
 TEST(PracticeTest, xXx_ispal)
 {
     Practice testObject;

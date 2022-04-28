@@ -5,7 +5,21 @@
 // descending order from greatest (first) to least (third)
 void Practice::sortDescending(int & first, int & second, int & third)
 {
-  
+  if(first < second){
+    int tmp = first;
+    first = second;
+    second = tmp;
+  }
+  if(second < third){
+    int tmp = second;
+    second = third;
+    third = tmp;
+    if( first < second){
+      int tmp = first;
+      first = second;
+      second = tmp;
+    }
+  }
   int biggest, middle, smallest;
   if( second > third && second > first )
   {
