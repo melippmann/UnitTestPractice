@@ -27,7 +27,7 @@ TEST(PracticeTest, xXx_repeats)
 }TEST(PracticeTest, escape_chars)
 {
     Practice testObject;
-	ASSERT_EQ(testObject.count_starting_repeats("\0\0\0"), 2 );
+	ASSERT_EQ(testObject.count_starting_repeats("\0\0\0"), 0 );
 }
 TEST(PracticeTest, new_lines)
 {
@@ -236,7 +236,7 @@ TEST(PracticeTest, sleepAllnights)
 	int slept[] = {1,2,3,4,5,6,7};
     Practice testObject;
 	int * a = testObject.allnighter(slept);
-	int *b = NULL;
+	int * b = NULL;
 	ASSERT_EQ(a, b);
 }
 
@@ -244,5 +244,5 @@ TEST(PracticeTest, NoSleepAllNights)
 {
 	int slept[] = {0,0,0,0,0,0,0};
     Practice testObject;
-	ASSERT_EQ(testObject.allnighter(slept), &slept[0]);
+	ASSERT_EQ(testObject.allnighter(slept), slept);
 }

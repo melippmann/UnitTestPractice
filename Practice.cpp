@@ -1,8 +1,6 @@
 #include "Practice.h"
 #include <string>
 
-using std::string;
-
 // Receive three integers and rearrange their values so that they are in
 // descending order from greatest (first) to least (third)
 void Practice::sortDescending(int & first, int & second, int & third)
@@ -41,6 +39,9 @@ void Practice::sortDescending(int & first, int & second, int & third)
   else{
     middle = third;
   }
+  first = biggest;
+  second = middle;
+  third = smallest;
 }
 
 // Receive a string and return whether or not it is strictly a palindrome,
@@ -75,15 +76,18 @@ bool Practice::isPalindrome(string input)
 // This function receives a string and counts how many times the same character
 // is repeated at the beginning of the string, before any other characters. The
 // function is case sensative so 'Z' is different than 'z'.
+// blank repeated null terminators will not be treated as palindromes
 int Practice::count_starting_repeats(string word)
 {
+
     int repetition = 0;
     int index = 0;
     char letter;
 
     if( word.length() > 0 )
       letter = word[0];
-
+    else
+      return 0;
     for(unsigned int i=1; i < word.length(); i++){
       if( word[i] == letter ){
         repetition++;
@@ -106,5 +110,4 @@ int* Practice::allnighter(int sleep[7])
   }
   
   return NULL;
-
 }
