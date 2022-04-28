@@ -201,15 +201,34 @@ TEST(PracticeTest, emptystring)
 }
 TEST(PracticeTest, noSleepFirstNight)
 {
-	int slept[] = {0};
+	int slept[] = {0,1,2,3,4,5,6};
     Practice testObject;
 	ASSERT_EQ(testObject.allnighter(slept), &slept[0]);
 }
 TEST(PracticeTest, noSleepSecondNight)
 {
-	int slept[] = {1,0,3,4,5,6,7};
+	int slept[] = {1,0,2,3,4,5,6};
     Practice testObject;
 	ASSERT_EQ(testObject.allnighter(slept), &slept[1]);
+}
+TEST(PracticeTest, noSleepthirdNight)
+{
+	int slept[] = {1,2,0,3,4,5,6};
+    Practice testObject;
+	ASSERT_EQ(testObject.allnighter(slept), &slept[2]);
+}
+
+TEST(PracticeTest, noSleepfourthNight)
+{
+	int slept[] = {1,3,2,0,4,5,6};
+    Practice testObject;
+	ASSERT_EQ(testObject.allnighter(slept), &slept[3]);
+}
+TEST(PracticeTest, noSleepseventNight)
+{
+	int slept[] = {1,3,2,6,4,5,0};
+    Practice testObject;
+	ASSERT_EQ(testObject.allnighter(slept), &slept[6]);
 }
 
 TEST(PracticeTest, sleepAllnights)
@@ -221,3 +240,9 @@ TEST(PracticeTest, sleepAllnights)
 	ASSERT_EQ(a, b);
 }
 
+TEST(PracticeTest, NoSleepAllNights)
+{
+	int slept[] = {0,0,0,0,0,0,0};
+    Practice testObject;
+	ASSERT_EQ(testObject.allnighter(slept), &slept[0]);
+}
