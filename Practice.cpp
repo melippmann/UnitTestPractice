@@ -5,6 +5,7 @@
 // descending order from greatest (first) to least (third)
 void Practice::sortDescending(int & first, int & second, int & third)
 {
+  
   int biggest, middle, smallest;
   if( second > third && second > first )
   {
@@ -39,6 +40,7 @@ void Practice::sortDescending(int & first, int & second, int & third)
   else{
     middle = third;
   }
+ 
   first = biggest;
   second = middle;
   third = smallest;
